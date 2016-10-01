@@ -1,7 +1,7 @@
 {
-  "name": "AngularJS CLI",
+  "name": "angularjs_cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "CLI Tool to setup a basic angular project",
   "main": "index.js",
   "scripts": {
     "lite": "lite-server",
@@ -11,6 +11,10 @@
   },
   "author": "Corey O'Donnell",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rcodonnell/AngularJS-CLI"
+  },
   "devDependencies": {
     "html-loader": "^0.4.4",
     "lite-server": "^2.2.2",
