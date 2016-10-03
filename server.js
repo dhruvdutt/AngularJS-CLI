@@ -3,7 +3,7 @@
 const Hapi = require('hapi');
 
 const APP_HOST = process.env.HOST || "localhost";
-const APP_PORT = process.env.PORT || 8000;
+const APP_PORT = process.env.PORT || 3000;
 
 // Create a server with a host and port
 const server = new Hapi.Server();
