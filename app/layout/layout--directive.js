@@ -17,6 +17,6 @@ module.exports = function (ngModule) {
     ngModule.controller('layoutController', function () {
         var self = this;
 
-        self.title = 'Hell Yeah';
+        self.title = 'layout controller';
     });
 };
