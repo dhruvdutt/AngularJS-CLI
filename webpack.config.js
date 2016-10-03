@@ -1,11 +1,11 @@
 'use strict';
 
 module.exports = {
-    context: __dirname + '/app',
+    context: __dirname + '/client/scripts',
     entry: './index.js',
     output: {
-        path: __dirname + '/dist',
-        filename: 'bundle.js'
+        path: __dirname + '/dist/js',
+        filename: 'main.js'
     },
     module: {
         loaders: [

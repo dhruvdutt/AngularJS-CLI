@@ -23,7 +23,7 @@ module.exports = function(config) {
             angularPath,
             angularMock,
             {
-                pattern: 'app/{,*/}{,*/}spec/*.js',
+                pattern: 'client/scripts/{,*/}{,*/}spec/*.js',
                 included: true,
                 watched: false,
                 served: true
@@ -38,7 +38,7 @@ module.exports = function(config) {
         preprocessors: {
             angularPath: ['webpack'],
             angularMock: ['webpack'],
-            'app/{,*/}{,*/}spec/*.js': ['webpack']
+            'client/scripts/{,*/}{,*/}spec/*.js': ['webpack']
 
         },
 
