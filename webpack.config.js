@@ -1,5 +1,7 @@
 'use strict';
 
+const path = require('path');
+
 module.exports = {
     context: path.join(__dirname, '/client/scripts'),
     entry: './index.js',

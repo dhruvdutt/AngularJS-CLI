@@ -5,16 +5,16 @@
 
 const vision = require('vision');
 const inert = require('inert');
-const Hapi = require('hapi');
-const Path = require('path');
+const hapi = require('hapi');
+const path = require('path');
 const handlebars = require('handlebars');
 
-const rootDir = Path.join(__dirname, '..');
+const rootDir = path.join(__dirname, '..');
 const APP_HOST = process.env.HOST || 'localhost';
 const APP_PORT = process.env.PORT || 3000;
 
 // Create a server with a host and port
-const server = new Hapi.Server();
+const server = new hapi.Server();
 
 server.register([vision, inert], () => {
     server.connection({
@@ -27,7 +27,7 @@ server.register([vision, inert], () => {
         method: 'GET',
         handler: {
             directory: {
-                path: Path.join(rootDir, 'dist/js'),
+                path: path.join(rootDir, 'dist/js'),
                 index: false,
                 listing: true,
             },
@@ -44,7 +44,7 @@ server.register([vision, inert], () => {
         engines: {
             hbs: handlebars,
         },
-        path: Path.join(rootDir, 'client'),
+        path: path.join(rootDir, 'client'),
     });
 
     // Start the server
