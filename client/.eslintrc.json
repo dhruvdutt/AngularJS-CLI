@@ -18,7 +18,8 @@
 			"new-cap": 2,
 			"wrap-iife": 2,
 			"no-native-reassign": 2,
-            "prefer-arrow-callback": 0
+            "prefer-arrow-callback": 0,
+            "import/no-extraneous-dependencies": 0
 		},
 		"globals": {
             "path": true,
