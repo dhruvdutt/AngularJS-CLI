@@ -1,6 +1,8 @@
 // Karma configuration
 // Generated on Sun Oct 02 2016 12:27:57 GMT-0400 (EDT)
 
+'use strict';
+
 const webpackConfig = require('./webpack.config.js');
 const path = require('path');
 

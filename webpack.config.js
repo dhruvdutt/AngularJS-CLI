@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
     context: path.join(__dirname, '/client/scripts'),
     entry: './index.js',

@@ -1,3 +1,5 @@
+'use strict';
+
 // var chai = require('chai');
 var module = require('./layout.tpl.html');
 var layout = require('./layout.tpl.html');

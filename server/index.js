@@ -1,5 +1,8 @@
 /* eslint no-console: 0 */
 /* eslint nonew: 0 */
+
+'use strict';
+
 const vision = require('vision');
 const inert = require('inert');
 const Hapi = require('hapi');
