@@ -1,21 +1,20 @@
 'use strict';
 
-var chai = require('chai'),
-    expect = chai.expect;
+var chai = require('chai');
+
+var expect = chai.expect;
 
 require('../index.js');
 
-describe('first test', function () {
+describe('first test', () => {
     var controller;
 
     beforeEach(angular.mock.module('layout'));
-    beforeEach(angular.mock.inject(function ($rootScope, $controller) {
-
+    beforeEach(angular.mock.inject(($rootScope, $controller) => {
         controller = $controller('layoutController');
     }));
 
-    it('first actual test', function () {
-
+    it('first actual test', () => {
         expect(controller.title).to.equal('layout controller');
     });
 });

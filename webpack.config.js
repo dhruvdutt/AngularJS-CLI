@@ -1,18 +1,16 @@
-'use strict';
-
 module.exports = {
-    context: __dirname + '/client/scripts',
+    context: path.join(__dirname, '/client/scripts'),
     entry: './index.js',
     output: {
-        path: __dirname + '/dist/js',
-        filename: 'main.js'
+        path: path.join(__dirname, '/dist/js'),
+        filename: 'main.js',
     },
     module: {
         loaders: [
             {
                 test: /\.html$/,
-                loader: 'html'
-            }
-        ]
-    }
+                loader: 'html',
+            },
+        ],
+    },
 };

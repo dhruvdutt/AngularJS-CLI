@@ -10,7 +10,7 @@
     "eslint:root": "eslint -c ./.eslintrc.json *.js",
     "eslint:client": "eslint -c ./client/.eslintrc.json ./client/**/**.js --env node",
     "eslint:server": "eslint -c ./server/.eslintrc.json ./server/**/**.js --env node",
-    "pretest": "npm run eslint:root && npm run eslint:client && npm run eslint:server --env node",
+    "pretest": "npm run eslint:root || npm run eslint:client || npm run eslint:server --env node",
     "test": "./node_modules/karma/bin/karma start",
     "build": "./node_modules/node-sass/bin/node-sass styles -o dist"
   },

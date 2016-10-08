@@ -1,17 +1,22 @@
-'use strict';
+/* eslint no-console: 0 */
+/* eslint nonew: 0 */
+const vision = require('vision');
+const inert = require('inert');
+const Hapi = require('hapi');
+const Path = require('path');
+const handlebars = require('handlebars');
 
-const Hapi = require('hapi'),
-      Path = require('path'),
-      rootDir = Path.join(__dirname, '..'),
-      APP_HOST = process.env.HOST || 'localhost',
-      APP_PORT = process.env.PORT || 3000,
-      // Create a server with a host and port
-      server = new Hapi.Server();
+const rootDir = Path.join(__dirname, '..');
+const APP_HOST = process.env.HOST || 'localhost';
+const APP_PORT = process.env.PORT || 3000;
 
-server.register([require('vision'), require('inert')], (err) => {
+// Create a server with a host and port
+const server = new Hapi.Server();
+
+server.register([vision, inert], () => {
     server.connection({
         host: APP_HOST,
-        port: APP_PORT
+        port: APP_PORT,
     });
 
     server.route({
@@ -21,25 +26,22 @@ server.register([require('vision'), require('inert')], (err) => {
             directory: {
                 path: Path.join(rootDir, 'dist/js'),
                 index: false,
-                listing: true
-            }
-        }
+                listing: true,
+            },
+        },
     });
 
     server.route({
         method: 'GET',
         path: '/',
-        handler: function (request, reply) {
-
-            return reply.view('index.html.hbs');
-        }
+        handler(request, reply) { return reply.view('index.html.hbs'); },
     });
 
     server.views({
         engines: {
-            hbs: require('handlebars')
+            hbs: handlebars,
         },
-        path: Path.join(rootDir, 'client')
+        path: Path.join(rootDir, 'client'),
     });
 
     // Start the server

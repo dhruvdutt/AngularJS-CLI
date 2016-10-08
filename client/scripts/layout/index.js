@@ -1,5 +1,3 @@
-'use strict';
-
 var ngModule = angular.module('layout', []);
 
 require('./layout--directive.js')(ngModule);

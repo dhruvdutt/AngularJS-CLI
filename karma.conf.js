@@ -1,13 +1,12 @@
-'use strict';
 // Karma configuration
 // Generated on Sun Oct 02 2016 12:27:57 GMT-0400 (EDT)
 
-var webpackConfig = require('./webpack.config.js'),
-    path = require('path');
+const webpackConfig = require('./webpack.config.js');
+const path = require('path');
 
-module.exports = function(config) {
-    var angularPath = path.join('node_modules', 'angular', 'angular.js'),
-        angularMock = path.join('node_modules', 'angular-mocks', 'angular-mocks.js');
+module.exports = function karma(config) {
+    const angularPath = path.join('node_modules', 'angular', 'angular.js');
+    const angularMock = path.join('node_modules', 'angular-mocks', 'angular-mocks.js');
 
     config.set({
 
@@ -26,8 +25,8 @@ module.exports = function(config) {
                 pattern: 'client/scripts/{,*/}{,*/}spec/*.js',
                 included: true,
                 watched: false,
-                served: true
-            }
+                served: true,
+            },
         ],
 
         // list of files to exclude
@@ -38,7 +37,7 @@ module.exports = function(config) {
         preprocessors: {
             angularPath: ['webpack'],
             angularMock: ['webpack'],
-            'client/scripts/{,*/}{,*/}spec/*.js': ['webpack']
+            'client/scripts/{,*/}{,*/}spec/*.js': ['webpack'],
 
         },
 
@@ -55,7 +54,8 @@ module.exports = function(config) {
         colors: true,
 
         // level of logging
-        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN ||
+        // config.LOG_INFO || config.LOG_DEBUG
         logLevel: config.LOG_INFO,
 
         // enable / disable watching file and executing tests whenever any file changes
@@ -73,14 +73,14 @@ module.exports = function(config) {
             'karma-phantomjs-launcher',
             'karma-coverage',
             'karma-webpack',
-            'istanbul-instrumenter-loader'
+            'istanbul-instrumenter-loader',
         ],
 
         webpack: webpackConfig,
 
         webpackMiddleware: {
             noInfo: true,
-            lazy: false
+            lazy: false,
         },
 
         // Continuous Integration mode
@@ -89,6 +89,6 @@ module.exports = function(config) {
 
         // Concurrency level
         // how many browser should be started simultaneous
-        concurrency: Infinity
+        concurrency: Infinity,
     });
 };

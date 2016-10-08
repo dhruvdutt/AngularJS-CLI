@@ -1,8 +1,7 @@
 'use strict';
 
-module.exports = function (ngModule) {
-
-    ngModule.directive('layout', function () {
+module.exports = function layoutDirective(ngModule) {
+    ngModule.directive('layout', function layout() {
         return {
             restrict: 'E',
             replace: true,
@@ -10,11 +9,11 @@ module.exports = function (ngModule) {
             controllerAs: 'layoutCtrl',
             bindToController: true,
             templateUrl: '/templates/layout/layout.html',
-            scope: {}
+            scope: {},
         };
     });
 
-    ngModule.controller('layoutController', function () {
+    ngModule.controller('layoutController', function layoutController() {
         var self = this;
 
         self.title = 'layout controller';
