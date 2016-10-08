@@ -1,5 +1,7 @@
 'use strict';
 
+/* eslint import/no-extraneous-dependencies: 0 */
+
 var chai = require('chai');
 
 var expect = chai.expect;
